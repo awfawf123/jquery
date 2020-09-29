@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            let ids =$('input[type="checkbox"]').map((a,b)=>{
+                console.log(a,b);
+                return b.id;
+            }).get().join('-'); //가져오고 join써서 string타입으로 변환
+            
+            console.log(ids);
+            $.map($('input[type="checkbox"]'),(a,b)=>{
+                console.log(a,b);
+            })
+            console.clear();
+
+            let chkboxes = $.grep($('input:checkbox'),(a,b)=>{
+                console.log(a,b);
+                return (b>0 ? a:null);
+            })
+            console.clear();
+            console.log(chkboxes);
+        });
+    </script>
+</head>
+<body>
+    <form>
+        <div>
+            <label for="one">One</label>
+            <input type="checkbox" id="one" >
+        </div>
+        <div>
+            <label for="two">Two</label>
+            <input type="checkbox" id="two" >
+        </div>
+        <div>
+            <label for="three">Three</label>
+            <input type="checkbox" id="three" >
+        </div>
+    </form>
+    
+</body>
+</html>
